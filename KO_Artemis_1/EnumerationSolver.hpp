@@ -9,7 +9,7 @@
 
 using namespace std;
 
-// TODO: comment this class with Doxygen (and delete this comment)
+
 class EnumerationSolver {
     static int optimumValue_;
     static int optCounter_;
