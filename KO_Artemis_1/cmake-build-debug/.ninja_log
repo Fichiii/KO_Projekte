@@ -1,0 +1,19 @@
+# ninja log v6
+360	434	7822432922875271	KO_Artemis_1.exe	62d6386415dfa9a9
+4	236	7822385309574666	CMakeFiles/KO_Artemis_1.dir/Instance.cpp.obj	3f75795596bfe1f3
+8	293	7822385309619780	CMakeFiles/KO_Artemis_1.dir/Solution.cpp.obj	946ede874b849bc
+1	321	7822385309544667	CMakeFiles/KO_Artemis_1.dir/EnumerationSolver.cpp.obj	689be2d9e4284d8f
+4	359	7822432919315583	CMakeFiles/KO_Artemis_1.dir/main.cpp.obj	848e5875cceb685
+6	420	7822385309594679	CMakeFiles/KO_Artemis_1.dir/Reader.cpp.obj	22f52f7543ce4e9a
+24	429	7822576889388432	build.ninja	8dba5caf3154e458
+18	441	7822576890124087	CMakeFiles/KO_Artemis_1.dir/main.cpp.obj	848e5875cceb685
+21	442	7822576890154183	CMakeFiles/KO_Artemis_1.dir/EnumerationSolver.cpp.obj	689be2d9e4284d8f
+4	352	7822578919855550	CMakeFiles/KO_Artemis_1.dir/EnumerationSolver.cpp.obj	689be2d9e4284d8f
+353	427	7822578923341047	KO_Artemis_1.exe	62d6386415dfa9a9
+7	353	7822581417157111	CMakeFiles/KO_Artemis_1.dir/EnumerationSolver.cpp.obj	689be2d9e4284d8f
+4	369	7822581417132095	CMakeFiles/KO_Artemis_1.dir/main.cpp.obj	848e5875cceb685
+370	445	7822581420787774	KO_Artemis_1.exe	62d6386415dfa9a9
+4	350	7822582181225439	CMakeFiles/KO_Artemis_1.dir/EnumerationSolver.cpp.obj	689be2d9e4284d8f
+350	430	7822582184684237	KO_Artemis_1.exe	62d6386415dfa9a9
+4	338	7822583280522616	CMakeFiles/KO_Artemis_1.dir/EnumerationSolver.cpp.obj	689be2d9e4284d8f
+339	411	7822583283868322	KO_Artemis_1.exe	62d6386415dfa9a9

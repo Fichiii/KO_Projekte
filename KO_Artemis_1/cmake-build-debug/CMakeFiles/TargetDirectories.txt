@@ -1,0 +1,3 @@
+/Users/kevo/C++/KO/KO_Artemis_1/cmake-build-debug/CMakeFiles/KO_Artemis_1.dir
+/Users/kevo/C++/KO/KO_Artemis_1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/kevo/C++/KO/KO_Artemis_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
