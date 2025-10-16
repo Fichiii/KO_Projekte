@@ -17,6 +17,6 @@ class EnumerationSolver {
 
 public:
 
-    static vector<int> solve(Instance& toSolve);
+    static vector<int> solve(const Instance& toSolve);
     static void backtracking(Solution &loesung,const int &index,const int &max);
 };

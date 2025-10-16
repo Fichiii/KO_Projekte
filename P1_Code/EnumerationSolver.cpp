@@ -1,7 +1,7 @@
 #include "EnumerationSolver.hpp"
 
 
-vector<int> EnumerationSolver::solve(Instance& toSolve){
+vector<int> EnumerationSolver::solve(const Instance& toSolve){
     Solution loesung = Solution(toSolve);
     backtracking(loesung,0,toSolve.getNumberOfItems());
     return vector<int> {feasCounter_,optCounter_, optimumValue_};
