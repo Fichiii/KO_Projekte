@@ -13,5 +13,5 @@ class DynamicProgramSolver {
 
     public:
         static Solution solve(const Instance& toSolve);
-        static Solution find_path(const Instance &toSolve,const vector<vector<int>> &matrix);
+        static Solution find_solution(const Instance &toSolve,const vector<vector<int>> &matrix);
 };
