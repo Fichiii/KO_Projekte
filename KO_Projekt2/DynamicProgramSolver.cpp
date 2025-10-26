@@ -36,7 +36,7 @@ Solution DynamicProgramSolver::solve(const Instance& toSolve){
 
         for (int k = 1; k <= W; k++)
         {
-            if (k - weight_j > 0 && matrix[j-1][k] < matrix[j-1][k - weight_j] + value_j)
+            if (k - weight_j >= 0 && matrix[j-1][k] < matrix[j-1][k - weight_j] + value_j)
             {
                 matrix[j][k] = matrix[j-1][k - weight_j] + value_j;
             }
