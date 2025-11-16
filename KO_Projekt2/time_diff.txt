@@ -1,0 +1,10 @@
+Enumirationsolver:
+	Hier wachsen die Laufzeiten exponentiell, da wir über alle möglichen Lösungen mittels backtracking durch enumieren und am Ende die beste Lösung speichern. 
+	Bereits ab n30 sieht man, dass die Laufzeit extrem in die höhe schießt und nicht wirklich effizient ist.
+
+Dynamicsolver:
+	Hier wächst unsere deutlich langsamer als in Enumirationsolver, da wir nur eine Laufzeit von O(n * W) und nicht O(2^n) haben. Unser Algorithmus besteht nur aus zwei verschachtelten for Schleifen, die von n und W abhängig
+	sind, sowie einer for Schleife zur festlegung des optimalen Lösungsweges. Selbst bei einem n5000 ist die Laufzeit noch immer bei unter einer Sekunde, was deutlich effizienter als ist als bei Enumiration Solver.
+
+Fazit:
+	Da Enumirationsolver eine Laufzeit von O(2^n) hat und Dynamicsolver nur eine von O(n*W) ist Dynamicsolver auf jeden Fall die bessere Wahl, wenns um effizients geht.
