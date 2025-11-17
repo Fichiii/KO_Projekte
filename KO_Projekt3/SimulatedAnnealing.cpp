@@ -7,11 +7,34 @@
 
 
 //Setze Startlösung auf 0
-void SimulatedAnnealing::generate_firt_solution(Solution &solution, Instance& toSolve){
-    for(int i = 0; i < toSolve.n(); i++){
-        solution.set(i,0);
+//void SimulatedAnnealing::generate_first_solution(Solution &solution, Instance& toSolve){
+    //for(int i = 0; i < toSolve.n(); i++){
+        //solution.set(i,0);
+    //}
+//}
+
+
+void SimulatedAnnealing::generate_first_solution(Solution &solution, Instance& toSolve){
+    for(int i = 0; i < toSolve.n(); i++) {
+        double highest = 0.0;
+        int indexHighest = -1;
+        for(int j = 0; j < toSolve.n(); j++) {
+            // wir berechnen den Value pro Gewicht
+            double value = static_cast<float>(toSolve.getValue(j)) / static_cast<float>(toSolve.getWeight(j));
+
+            // Wir nehmen ein Objekt wenn es
+            // 1. Noch nicht drin ist && 2. Größeren Val/Gewicht hat && 3.den Rucksack nicht überfüllt
+            if(solution.get(j) == false && value  > highest && (toSolve.getCapacity() - solution.getWeight() >=  toSolve.getWeight(j))) {
+                highest = value;
+                indexHighest = j;
+            }
+        }
+        // Wenn der index -1 ist kann nichts mehr gewählt werden, wir sind fertig
+        if(indexHighest == -1){return;}
+        solution.set(indexHighest,1);
     }
 }
+
 //Generiere random Solution in dem 1 Bit gefliped wird
 Solution SimulatedAnnealing::generate_random_solution(Solution &solution, Instance& toSolve){
     Solution new_solution = solution;
@@ -66,7 +89,7 @@ void SimulatedAnnealing::print_best_solution(Solution &solution){
 void SimulatedAnnealing::solve(Instance& toSolve, int timelimit, int iterationlimit, double starttemperature, double factor) {
     Solution solution = Solution(toSolve);
 
-    generate_firt_solution(solution, toSolve);
+    generate_first_solution(solution, toSolve);
 
     print_start_solution(solution);
 
@@ -90,12 +113,13 @@ void SimulatedAnnealing::solve(Instance& toSolve, int timelimit, int iterationli
 
     auto deadline = start_time + time_limit;
 
+
     while(!stop_criteria){
         Solution new_solution = generate_random_solution(solution, toSolve);
 
         int curr_value = solution.getValue();
         int rand_weight = new_solution.getWeight();
-        int rand_value= solution.getValue();
+        int rand_value = new_solution.getValue();
 
         double fraction = (rand_value - curr_value)/temperatur;
 

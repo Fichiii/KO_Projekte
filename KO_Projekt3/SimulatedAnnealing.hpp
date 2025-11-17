@@ -17,7 +17,7 @@ class SimulatedAnnealing {
 
     public:
         static void solve(Instance& toSolve, int timelimit, int iterationlimit, double starttemperature, double factor);
-        static void generate_firt_solution(Solution &solution, Instance& toSolve);
+        static void generate_first_solution(Solution &solution, Instance& toSolve);
         static Solution generate_random_solution(Solution &solution, Instance& toSolve);
         static void print_start_solution(Solution &solution);
         static void print_best_solution(Solution &solution);
