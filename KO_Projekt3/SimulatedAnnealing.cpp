@@ -1,5 +1,11 @@
 #include "SimulatedAnnealing.hpp"
 
+//TODO: Mache schöner
+//TODO: Füge andere Startlösung hinzu
+//TODO: Teste in Artemis
+//TODO: Maybe effizienter machen
+
+
 //Setze Startlösung auf 0
 void SimulatedAnnealing::generate_firt_solution(Solution &solution, Instance& toSolve){
     for(int i = 0; i < toSolve.n(); i++){
@@ -87,15 +93,19 @@ void SimulatedAnnealing::solve(Instance& toSolve, int timelimit, int iterationli
     while(!stop_criteria){
         Solution new_solution = generate_random_solution(solution, toSolve);
 
-        double fraction = (new_solution.getValue() - solution.getValue())/temperatur;
+        int curr_value = solution.getValue();
+        int rand_weight = new_solution.getWeight();
+        int rand_value= solution.getValue();
 
-        if (new_solution.isFeasible()) {
-            if(new_solution.getValue() >= solution.getValue() || random01() < exp(fraction)){
+        double fraction = (rand_value - curr_value)/temperatur;
+
+        if (rand_weight <= toSolve.getCapacity()) {
+            if(rand_value >= curr_value || random01() < exp(fraction)){
                 solution = new_solution;
 
-                if(new_solution.getValue() >= best_value){
+                if(rand_value >= best_value){
                     best_solution = new_solution;
-                    best_value = new_solution.getValue();
+                    best_value = rand_value;
                 }
             }
         }
