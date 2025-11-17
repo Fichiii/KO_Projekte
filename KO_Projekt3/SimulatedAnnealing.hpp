@@ -20,7 +20,7 @@ class SimulatedAnnealing {
         static void generate_first_solution(Solution &solution, Instance& toSolve);
         static Solution generate_random_solution(Solution &solution, Instance& toSolve);
         static void print_start_solution(Solution &solution);
-        static void print_best_solution(Solution &solution);
+        static void print_best_solution(Solution &solution, const int &counter);
 };
 
 int random_int(Instance &toSolve);

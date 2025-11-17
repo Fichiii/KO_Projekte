@@ -78,12 +78,13 @@ void SimulatedAnnealing::print_start_solution(Solution &solution){
     cout << '\n';
 }
 
-void SimulatedAnnealing::print_best_solution(Solution &solution){
+void SimulatedAnnealing::print_best_solution(Solution &solution, const int &counter){
     cout << "beste gefundene Loesung mit Zielfunktionswert: " << solution.getValue() << '\n';
     for(int i = 0; i < solution.getInstance().getNumberOfItems(); i++){
         cout << solution.get(i) << ' ';
     }
     cout << '\n';
+    cout << "Total Iterations: " << counter << '\n';
 }
 
 void SimulatedAnnealing::solve(Instance& toSolve, int timelimit, int iterationlimit, double starttemperature, double factor) {
@@ -112,6 +113,7 @@ void SimulatedAnnealing::solve(Instance& toSolve, int timelimit, int iterationli
     auto start_time = chrono::steady_clock::now();
 
     auto deadline = start_time + time_limit;
+
 
 
     while(!stop_criteria){
@@ -148,5 +150,5 @@ void SimulatedAnnealing::solve(Instance& toSolve, int timelimit, int iterationli
         }
 
 
-    print_best_solution(best_solution);
+    print_best_solution(best_solution, counter);
 }
